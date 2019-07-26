@@ -1,39 +1,49 @@
 from bs4 import BeautifulSoup
 import urllib.request
+import random
+import time
+import ssl
 import csv
 import re
 
 row = ['url', 'robot', 'builder', 'type', 'job', 'team', 'hometown', 'sponsors',
        'statHistory', 'matchHistory']
-year = 2019
-links = [{'year': '2019', 'link': 'https://battlebots.com/robot/whiplash-2019/'},
-         {'year': '2019', 'link': 'https://battlebots.com/robot/25345/'},
-         {'year': '2019', 'link': 'https://battlebots.com/robot/yeti-2019/'}]
-baseUrl = 'https://battlebots.com/robots/'
+yearUrls = ['https://battlebots.com/season-1-robots/', 'https://battlebots.com/season-2-robots/',
+            'https://battlebots.com/2018-season-robots/', 'https://battlebots.com/2019-season-robots/']
+links = []
+sslcontext = ssl.SSLContext()
 outputfile = 'output/robot-data.csv'
 
 with open(outputfile, 'w') as csv_file:
     writer = csv.writer(csv_file)
     writer.writerow(row)
 
-""" while year > 2014:
-    url = baseUrl + str(year) + '-season-robots/'
-    body = urllib.request.urlopen(url).read()
-    soup = BeautifulSoup(body, 'html.parser')
-    results = soup.find_all(class_='gallery')
-    for result in results:
-        try:
-            botLink = result['href']
-            linkRow = {'year': str(year), 'link': botLink}
-            links.append(linkRow)
-        except:
-            print('Could not get href from ' + str(result))
-    year = year - 1 """
+i = 0
 
-for link in links:
-    url = link['link']
+while i < len(yearUrls):
+    linkYear = []
+    url = yearUrls[i]
     try:
-        body = urllib.request.urlopen(url).read()
+        body = urllib.request.urlopen(url, context=sslcontext).read()
+        soup = BeautifulSoup(body, 'html.parser')
+        time.sleep(random.randint(3, 7))
+        results = soup.find_all(class_='grid-1-2')
+        if results == []:
+            results = soup.find_all(class_='more-button')
+        for result in results:
+            try:
+                botLink = result.find("a")['href']
+                linkYear.append(botLink)
+            except:
+                print('Could not get href from ' + str(result))
+    except Exception as error:
+        print(error)
+    links.extend(linkYear)
+    i += 1
+
+for url in links:
+    try:
+        body = urllib.request.urlopen(url, context=sslcontext).read()
         soup = BeautifulSoup(body, 'html.parser')
         try:
             robotNameTag = soup.find("p", text='Robot:')
