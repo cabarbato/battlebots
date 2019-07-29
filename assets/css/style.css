@@ -2,6 +2,12 @@ body {
     font-family: "Arial", sans-serif;
 }
 
+#chart {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .bar {
     fill: #5f89ad;
 }
@@ -16,5 +22,6 @@ body {
 }
 
 .label {
-    font-size: 13px;
+    font-size: 11px;
+    stroke: none;
 }
