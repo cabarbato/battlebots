@@ -1,19 +1,27 @@
-body {
-    font-family: "Arial", sans-serif;
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#main {
+    max-width: 800px !important;
+    margin: 0 auto;
 }
 
 #chart {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.bar {
-    fill: #5f89ad;
+section {
+    opacity: 0;
 }
 
-.axis {
+.show {
+    opacity: 1;
+}
+
+.axis, .label {
     font-size: 13px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .axis path, .axis line {
@@ -21,7 +29,12 @@ body {
     display: none;
 }
 
-.label {
-    font-size: 11px;
-    stroke: none;
+#header {
+    margin: 40px 130px 20px;
+}
+
+.ui.header {
+    margin: calc(1.25rem - .14285714em) 0 .5rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
 }
