@@ -1,0 +1,29 @@
+$white:        #ffffffe5 !default;
+$black:        #272822 !default;
+$pink:         #ff2fff !default;
+$red:          #f84486 !default;
+$purple:       #ad6fe7 !default;
+$cyan:         #51e0fd !default;
+$blue:         #1c33fa !default;
+$green:        #92ff16 !default;
+$yellow:       #e0ff55 !default;
+$orange:       #ffb223 !default;
+
+$theme-colors: (
+  "white":       $white,
+  "red":         $red,
+  "purple":      $purple,
+  "blue":        $blue,
+  "green":       $green,
+  "yellow":      $yellow,
+  "orange":      $orange,
+);
+
+$primary:        $yellow !default;
+$secondary:      $pink  !default;
+$dark:           $black  !default;
+
+$gradient-light: $pink   !default;
+$gradient-mid:   $purple !default;
+$gradient-dark:  $cyan   !default;
+$background-gradient: linear-gradient(35deg, $gradient-dark 0%, $gradient-mid 50%, $gradient-light 100%);

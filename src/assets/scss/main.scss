@@ -1,0 +1,130 @@
+@import "./core";
+
+html,
+body {
+  @include subheading-font;
+
+  font-size: 14px;
+  box-sizing: border-box;
+  background: $gradient-dark;
+  background: $background-gradient fixed;
+}
+
+h2 {
+  font-weight: 800;
+  text-transform: uppercase;
+  transform: skew(-15deg);
+  font-size: 2.5rem;
+}
+
+h2,
+h3 {
+  @include subheading-font;
+}
+
+h3 {
+  color: $secondary;
+}
+
+svg {
+overflow: visible;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+
+  &__title {
+    background-size: cover !important;
+    z-index: 2;
+
+    h1 {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 3rem;
+
+      span {
+        @include heading-font;
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        box-shadow: 2px 2px $white;
+        transform: skew(-15deg);
+      }
+    }
+
+    hr {
+      color: $white;
+      height: 2px !important;
+    }
+
+    h3 {
+      color: $white;
+    }
+  }
+
+  &__background {
+    position: fixed;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    mix-blend-mode: color-burn;
+    filter: blur(0.25rem);
+    min-height: calc(100vh + 1rem);
+    min-width: calc(100vw + 1rem);
+    z-index: 0;
+  }
+}
+
+main {
+  z-index: 2;
+}
+
+footer {
+  z-index: 3;
+  background-color: #fff;
+  position: relative;
+}
+
+@each $key, $value in $theme-colors {
+  .bg- {
+    &#{$key} {
+      background-color: $value !important;
+    }
+
+    &mobile- {
+      @include media-breakpoint-down(md) {
+        &#{$key} {
+          background-color: $value !important;
+        }
+      }
+    }
+  }
+
+  .color- {
+    &#{$key} {
+      color: $value !important;
+    }
+
+    &mobile- {
+      @include media-breakpoint-down(md) {
+        &#{$key} {
+          color: $value !important;
+        }
+      }
+    }
+  }
+
+  a.link-#{$key} {
+    transition: 100ms;
+    &:link {
+      color: $value;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

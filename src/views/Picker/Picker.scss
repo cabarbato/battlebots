@@ -1,0 +1,33 @@
+@import "../../assets/scss/core.scss";
+
+.picker {
+  height: 100vh;
+
+  .nav {
+    .nav-item {
+      transform: skew(-15deg);
+      a {
+        transition: 0.3s;
+        &:link,
+        &:visited {
+          color: $secondary;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+        &.active {
+          color: white;
+          text-shadow: 1.5px 1.5px 1px $secondary;
+        }
+      }
+    }
+  }
+
+  .axis path,
+  .tick line {
+    display: none;
+  }
+  rect {
+    transition: 0.15s;
+  }
+}
