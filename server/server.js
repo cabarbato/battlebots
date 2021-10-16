@@ -12,7 +12,7 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-   const year = new Date().getFullYear(),
+   /* const year = new Date().getFullYear(),
       python = spawn('python', ['server/main.py', toString(year)]);
 
    python.stdout.on('data', function (d) {
@@ -21,5 +21,5 @@ app.listen(port, () => {
 
    python.on('close', (d) => {
       console.log(`finished data collection: ${d}`);
-   });
+   }); */
 });
