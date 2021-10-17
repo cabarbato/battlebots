@@ -41,7 +41,7 @@ const App = () => (
     </main>
     <Sections
       as="footer"
-      className="footer py-5"
+      className="footer py-5 bg-white"
       content={content["footer.jsx"]["default"]}
     />
   </div>

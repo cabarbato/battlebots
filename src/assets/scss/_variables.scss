@@ -17,7 +17,7 @@ $theme-colors: (
   "green":       $green,
   "yellow":      $yellow,
   "orange":      $orange,
-);
+) !default;
 
 $primary:        $yellow !default;
 $secondary:      $pink  !default;

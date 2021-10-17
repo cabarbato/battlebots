@@ -11,7 +11,7 @@ body {
 }
 
 h2 {
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   transform: skew(-15deg);
   font-size: 2.5rem;
@@ -24,10 +24,11 @@ h3 {
 
 h3 {
   color: $secondary;
+  font-weight: 600;
 }
 
 svg {
-overflow: visible;
+  overflow: visible;
 }
 
 .header {
@@ -79,15 +80,15 @@ overflow: visible;
   }
 }
 
-main {
-  z-index: 2;
-}
-
+main,
 footer {
-  z-index: 3;
-  background-color: #fff;
+  z-index: 2;
   position: relative;
 }
+
+/* footer {
+  background-color: #fff;
+} */
 
 @each $key, $value in $theme-colors {
   .bg- {

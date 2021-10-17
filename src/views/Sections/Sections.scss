@@ -1,4 +1,4 @@
-@import "../../assets/scss/core.scss";
+@import "../../assets/scss/variables.scss";
 
 
 section {
@@ -6,6 +6,7 @@ section {
   overflow: hidden;
   position: relative;
   z-index: 10;
+  background-color: transparent;
 
   img {
     max-width: 100%;

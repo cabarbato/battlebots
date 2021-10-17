@@ -1,10 +1,11 @@
-@import "../../assets/scss/core.scss";
+@import "../../assets/scss/variables.scss";
 
 .picker {
   height: 100vh;
 
   .nav {
     .nav-item {
+      font-weight: 600;
       transform: skew(-15deg);
       a {
         transition: 0.3s;
@@ -17,7 +18,7 @@
         }
         &.active {
           color: white;
-          text-shadow: 1.5px 1.5px 1px $secondary;
+          text-shadow: 1.5px 1.5px $secondary;
         }
       }
     }
