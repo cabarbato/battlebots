@@ -1,0 +1,28 @@
+@import "../../assets/scss/variables.scss";
+
+.versus {
+overflow: visible;
+  .dropdown {
+    display: inline;
+    
+    &-toggle {
+    text-shadow: 2px 2px 0px $white;
+    -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $white;
+    }
+    
+    &-menu {
+      top: calc(100% - 1rem);
+      left: 2.5rem;
+      width: 100%;
+      transform: skew(15deg) !important;
+    }
+
+    &-item {
+      text-shadow: 1.5px 1.5px $primary;
+    }
+    .nav-link {
+      display: inline;
+    }
+  }
+}

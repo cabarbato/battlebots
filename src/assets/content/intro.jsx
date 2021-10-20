@@ -1,6 +1,6 @@
 const intro_contents = [
   {
-    title: <h2>Robots Activate</h2>,
+    title: <h2>Robots <br className="d-sm-none" /> Activate</h2>,
     content: (
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan

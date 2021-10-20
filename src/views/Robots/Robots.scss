@@ -1,0 +1,16 @@
+.robots {
+  position: relative;
+
+  .carousel {
+    width: 100%;
+    padding: 2rem;
+
+    &-item img {
+      border: 0px transparent none !important;
+    }
+
+    .sr-only {
+      display: none;
+    }
+  }
+}

@@ -1,34 +1,53 @@
 @import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
 
-.picker {
-  height: 100vh;
+#intro .col-12 {
+  background-color: $white;
+  padding-bottom: 3rem;
+  border-radius: calc(1rem + 3px);
+  outline: 2px $secondary solid;
+  box-shadow: 3px 3px 0px $secondary;
 
-  .nav {
-    .nav-item {
-      font-weight: 600;
-      transform: skew(-15deg);
-      a {
-        transition: 0.3s;
-        &:link,
-        &:visited {
-          color: $secondary;
-        }
-        &:hover {
-          opacity: 0.7;
-        }
-        &.active {
-          color: white;
-          text-shadow: 1.5px 1.5px $secondary;
+  .picker {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .nav {
+      .nav-item {
+        font-weight: 600;
+        transform: skew(-15deg);
+        a {
+          transition: 0.3s;
+          &:link,
+          &:visited {
+            color: $secondary;
+          }
+          &:hover {
+            opacity: 0.7;
+          }
+          &.active {
+            color: white;
+            text-shadow: 1.5px 1.5px $secondary;
+          }
         }
       }
     }
-  }
+    #picker__chart {
+      width: 100%;
 
-  .axis path,
-  .tick line {
-    display: none;
-  }
-  rect {
-    transition: 0.15s;
+      .axis path,
+      .tick line {
+        display: none;
+      }
+      rect {
+        transition: 0.15s;
+      }
+      text {
+        @include embed-font;
+        fill: $black;
+        opacity: 0.7;
+      }
+    }
   }
 }

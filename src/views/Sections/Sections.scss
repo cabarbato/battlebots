@@ -1,9 +1,8 @@
 @import "../../assets/scss/variables.scss";
 
-
 section {
   display: block;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   z-index: 10;
   background-color: transparent;
@@ -14,11 +13,6 @@ section {
   }
   
   .container .col-12 {
-    background-color: $white;
-    padding-bottom: 3rem;
-    border-radius: calc(1rem + 3px);
-    outline: 2px $secondary solid;
-    box-shadow: 3px 3px 0px $secondary;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -42,7 +36,7 @@ section {
       color: $secondary;
     }
     h2 {
-      max-width: 400px;
+      display: inline;
       margin-top: 3rem;
       color: #fff;
       background-color: $primary;

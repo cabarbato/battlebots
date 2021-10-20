@@ -42,10 +42,21 @@ svg {
     background-size: cover !important;
     z-index: 2;
 
+    .col-12 {
+      @include media-breakpoint-down(sm) {
+        padding: 2rem 1rem 0 !important;
+      }
+    }
+
     h1 {
       color: #fff;
       text-transform: uppercase;
       font-size: 3rem;
+
+      @include media-breakpoint-down(sm) {
+        margin: 0 auto;
+        font-size: 2rem;
+      }
 
       span {
         @include heading-font;
@@ -53,6 +64,10 @@ svg {
         padding: 0.25rem 1rem;
         box-shadow: 2px 2px $white;
         transform: skew(-15deg);
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
       }
     }
 
@@ -86,9 +101,17 @@ footer {
   position: relative;
 }
 
-/* footer {
-  background-color: #fff;
-} */
+footer {
+  position: relative;
+  
+  ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+  }
+}
 
 @each $key, $value in $theme-colors {
   .bg- {
